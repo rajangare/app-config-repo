@@ -2,9 +2,6 @@ spring:
   application:
     name: bookmark-services   #current service name to be used by the eureka server
 
-  cloud:
-    config:
-      uri:http://localhost:8085
 server:
   port: 8090    #default port where the service will be started
 
