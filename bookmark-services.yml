@@ -25,6 +25,9 @@ eureka:
     password:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
 
 # custom path for swagger-ui
 springdoc:
