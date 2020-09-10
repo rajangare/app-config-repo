@@ -1,6 +1,15 @@
 spring:
   application:
     name: bookmark-services   #current service name to be used by the eureka server
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    datasource:
+      url: jdbc:postgresql://rajangare-learning-db.postgres.database.azure.com:5432/postgres
+      username: rajangare@rajangare-learning-db
+      password: raj@123.com
+      driverClassName: org.postgresql.Driver
 
 server:
   port: 8090    #default port where the service will be started
@@ -18,18 +27,18 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 #H2 Database config - http://localhost:8090/h2-console/login.jsp
-  datasource:
+#  datasource:
     #url: jdbc:h2:file:/data/bookmarkdb
-    url: jdbc:h2:mem:bookmarkdb
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
-      path: /h2
+#    url: jdbc:h2:mem:bookmarkdb
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password:
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2
 
 # custom path for swagger-ui
 springdoc:
