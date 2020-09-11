@@ -5,8 +5,7 @@ spring:
 # Postgres db connection
   jpa:
     database: POSTGRESQL
-    hibernate:
-      #ddl-auto: create-drop
+    open-in-view: true
     generate-ddl: true
     show-sql: true
     properties:
@@ -14,16 +13,14 @@ spring:
         jdbc:
           lob:
             non_contextual_creation: true
-        temp:
-          use_jdbc_metadata_defaults: false
-    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
 
   datasource:
+    type: com.zaxxer.hikari.HikariDataSource
     platform: postgres
     url: jdbc:postgresql://rajangare-learning-db.postgres.database.azure.com:5432/postgres
     username: rajangare@rajangare-learning-db
     password: raj@123.com
-    driverClassName: org.postgresql.Driver
+    driver-class-name: org.postgresql.Driver
     initialization-mode: always
 
 server:
