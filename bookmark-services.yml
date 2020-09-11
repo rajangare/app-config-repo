@@ -2,20 +2,26 @@ spring:
   application:
     name: bookmark-services   #current service name to be used by the eureka server
 
-
+# Postgres db connection
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      #ddl-auto: create-drop
+    generate-ddl: true
+    show-sql: true
   datasource:
+    platform: postgres
     url: jdbc:postgresql://rajangare-learning-db.postgres.database.azure.com:5432/postgres
     username: rajangare@rajangare-learning-db
     password: raj@123.com
+    driverClassName: org.postgresql.Driver
     initialization-mode: always
-logging:
-  level:
-    org:
-      springframework:
+
+    properties:
+      hibernate:
         jdbc:
-          core: DEBUG
-
-
+          lob:
+            non_contextual_creation: true
 
 server:
   port: 8090    #default port where the service will be started
@@ -55,3 +61,10 @@ springdoc:
     operationsSorter: method
   api-docs:
     path: /v3/api-docs
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core: DEBUG
