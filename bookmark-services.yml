@@ -6,7 +6,7 @@ spring:
   jpa:
     database: POSTGRESQL
     hibernate:
-      ddl-auto: create-drop
+      #ddl-auto: create-drop
     generate-ddl: true
     show-sql: true
     datasource:
