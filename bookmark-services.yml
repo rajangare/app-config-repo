@@ -9,12 +9,13 @@ spring:
       #ddl-auto: create-drop
     generate-ddl: true
     show-sql: true
-    datasource:
-      platform: postgres
-      url: jdbc:postgresql://rajangare-learning-db.postgres.database.azure.com:5432/postgres
-      username: rajangare@rajangare-learning-db
-      password: raj@123.com
-      driverClassName: org.postgresql.Driver
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://rajangare-learning-db.postgres.database.azure.com:5432/postgres
+    username: rajangare@rajangare-learning-db
+    password: raj@123.com
+    driverClassName: org.postgresql.Driver
+    initialization-mode: always
 
     properties:
       hibernate:
@@ -60,3 +61,10 @@ springdoc:
     operationsSorter: method
   api-docs:
     path: /v3/api-docs
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core: DEBUG
