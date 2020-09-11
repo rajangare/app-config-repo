@@ -9,6 +9,15 @@ spring:
       #ddl-auto: create-drop
     generate-ddl: true
     show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+
   datasource:
     platform: postgres
     url: jdbc:postgresql://rajangare-learning-db.postgres.database.azure.com:5432/postgres
@@ -16,12 +25,6 @@ spring:
     password: raj@123.com
     driverClassName: org.postgresql.Driver
     initialization-mode: always
-
-    properties:
-      hibernate:
-        jdbc:
-          lob:
-            non_contextual_creation: true
 
 server:
   port: 8090    #default port where the service will be started
