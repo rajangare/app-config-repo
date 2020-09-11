@@ -4,7 +4,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+      generate-ddl:true
     datasource:
       url: jdbc:postgresql://rajangare-learning-db.postgres.database.azure.com:5432/postgres
       username: rajangare@rajangare-learning-db
